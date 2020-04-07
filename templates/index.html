@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UnderLine</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">    
+</head>
+<body>
+<div class="jumbotron" style="color:black">
+    <center><h2 style="color: black">
+        UnderLine : Just the Essentials!
+    </h2></center>
+</div>
+<div class="container">
+    {% for new, des, i in context %}
+    <img src="{{i}}", alt="">
+    <h3>News: </h3> {{new}}
+    <h4>Description: </h4> {{des}}
+    {% endfor %}
+</div>
+</body>
+</html>
