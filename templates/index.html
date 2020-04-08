@@ -6,18 +6,45 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">    
 </head>
-<body>
-<div class="jumbotron" style="color:black">
-    <center><h2 style="color: black">
+<body class="container-fluid">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <a class="navbar-brand" href="#">UnderLine</a>
+            </div>
+            <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">World</a></li>
+            <li><a href="#">India</a></li>
+            <li><a href="#">Covid-19</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<div class="jumbotron" style="size:10px;color:black">
+    <center><h2 style="color: black;height: 50px;">
         UnderLine : Just the Essentials!
     </h2></center>
 </div>
+<center>
 <div class="container">
     {% for new, des, i in context %}
-    <img src="{{i}}", alt="">
+    <!--started-->
+    <div class="col-md-6">
+    <div class="card" style="width:500px; height: 600px;">
+        <img class="card-img-top img-fluid" src="{{i}}" alt="News" style="width:400px;height:300px;">
+        <div class="card-body">
+            <h3 class="card-title strong">{{new}}</h3>
+            <p class="card-text">{{des}}</p>
+        </div>
+    </div>
+    </div>
+    <!--Ended-->
+    <!--<img src="{{i}}", alt="">
     <h3>News: </h3> {{new}}
-    <h4>Description: </h4> {{des}}
+    <h4>Description: </h4> {{des}}-->
     {% endfor %}
 </div>
+</center>
 </body>
 </html>
