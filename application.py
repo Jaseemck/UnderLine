@@ -36,7 +36,7 @@ def ind():
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
     mylist = zip(news,desc,img)
-    return render_template('index.html',context=mylist)
+    return render_template('india.html',context=mylist)
 
 @application.route("/covid")
 def cov():
@@ -54,7 +54,7 @@ def cov():
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
     mylist = zip(news,desc,img)
-    return render_template('index.html',context=mylist)
+    return render_template('covid.html',context=mylist)
 
 @application.route("/world")
 def ever():
@@ -74,7 +74,7 @@ def ever():
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
     mylist = zip(news,desc,img)
-    return render_template('index.html',context=mylist)
+    return render_template('world.html',context=mylist)
 
 if __name__ == "__main__":
     application.run(debug=True)
