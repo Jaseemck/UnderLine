@@ -6,34 +6,93 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>UnderLine</title>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="{{ url_for('static', filename="css/style.css") }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+<link href="{{ url_for('static', filename="css/bootstrap.min.css") }}" rel="stylesheet">
+<link href="{{ url_for('static', filename="css/font-awesome.min.css") }}" rel="stylesheet">
+<link href="{{ url_for('static', filename="css/animate.css") }}" rel="stylesheet">
+<link href="{{ url_for('static', filename="css/font.css") }}" rel="stylesheet">
+<link href="{{ url_for('static', filename="css/li-scroller.css") }}" rel="stylesheet">
+<link href="{{ url_for('static', filename="css/slick.css") }}" rel="stylesheet">
+<link href="{{ url_for('static', filename="css/jquery.fancybox.css") }}" rel="stylesheet">
+<link href="{{ url_for('static', filename="css/theme.css") }}" rel="stylesheet">
+
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>    
 </head>
-<body class="container-fluid">
-    <nav class="navbar navbar-default bg-dark" role = "navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-            <a class="navbar-brand" href="#">UnderLine</a>
-            </div>
-            <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Home</a></li>
-            <li><a href="/world">World</a></li>
-            <li><a href="/in">India</a></li>
-            <li><a href="/covid">Covid-19</a></li>
-            </ul>
-        </div>
-    </nav>
-
-<div class="jumbotron jumbotron-fluid" style="margin-top:-20px; padding-bottom: 30px; border-bottom: solid black; color:black">
-    <div class="container">
-    <center><h2 style="color: black;">
-        <u>UnderLine</u> : Just the Essentials!
-    </h2></center>
-    <h4 style="text-align: center;">Top HeadLines</h4>
-    </div>
+<body>
+    <div id="preloader">
+  <div id="status">&nbsp;</div>
 </div>
-<center>
+<a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
 <div class="container">
+  <header id="header">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="header_top">
+          <div class="header_top_left">
+            <ul class="top_nav">
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="header_top_right">
+            <p>Friday, December 05, 2045</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="header_bottom">
+          <div class="logo_area"><a href="index.html" class="logo"><img src="{{ url_for('static', filename='logo.png') }}" alt=""></a></div>
+          <div class="add_banner"><a href="#"><img src="{{ url_for('static', filename='images/addbanner_728x90_V1.jpg') }}" alt=""></a></div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section id="navArea">
+    <nav class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav main_nav">
+          <li class="active"><a href="index.html"><span class="fa fa-home desktop-home"></span><span class="mobile-show">Home</span></a></li>
+          <li><a href="/world">World</a></li>
+          <li><a href="/in">India</a></li>
+          <li><a href="/covid">Covid-19</a></li>
+          <li><a href="/biz">Business</a></li>
+        </ul>
+      </div>
+    </nav>
+  </section>
+    <!--sliding bar start-->
+    <section id="newsSection">
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <div class="latest_newsarea"> <span>Latest News</span>
+            <ul id="ticker01" class="news_sticker">
+              {% for new, des, i in context %}
+              <li>&nbsp;&nbsp;   {{new}}  &nbsp;&nbsp;|</li>
+              {% endfor %}
+            </ul>
+            <div class="social_area">
+              <ul class="social_nav">
+                <li class="twitter"><a href="#"></a></li>
+                <li class="pinterest"><a href="#"></a></li>
+                <li class="googleplus"><a href="#"></a></li>
+                <li class="vimeo"><a href="#"></a></li>
+                <li class="youtube"><a href="#"></a></li>
+                <li class="mail"><a href="#"></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--sliding bar end-->
+<center>
+<div>
     {% for new, des, i in context %}
     <!--started-->
     <div class="col-md-6">
@@ -46,11 +105,19 @@
     </div>
     </div>
     <!--Ended-->
-    <!--<img src="{{i}}", alt="">
+    <img src="{{i}}", alt="">
     <h3>News: </h3> {{new}}
-    <h4>Description: </h4> {{des}}-->
+    <h4>Description: </h4> {{des}}
     {% endfor %}
 </div>
 </center>
+<script src="{{ url_for('static', filename="js/jquery.min.js") }}"></script>
+<script src="{{ url_for('static', filename="js/wow.min.js") }}"></script> 
+<script src="{{ url_for('static', filename="js/bootstrap.min.js") }}"></script> 
+<script src="{{ url_for('static', filename="js/slick.min.js") }}"></script> 
+<script src="{{ url_for('static', filename="js/jquery.li-scroller.1.0.js") }}"></script> 
+<script src="{{ url_for('static', filename="js/jquery.newsTicker.min.js") }}"></script> 
+<script src="{{ url_for('static', filename="js/jquery.fancybox.pack.js") }}"></script> 
+<script src="{{ url_for('static', filename="js/custom.js") }}"></script>  
 </body>
 </html>
