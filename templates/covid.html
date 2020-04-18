@@ -33,8 +33,8 @@
           <div class="header_top_left">
             <ul class="top_nav">
               <li><a href="/index.html">Home</a></li>
-              <li><a href="/about.html">About</a></li>
-              <li><a href="/contact.html">Contact</a></li>
+              <li><a href="#footer">About</a></li>
+              <li><a href="#footer">Contact</a></li>
             </ul>
           </div>
           <div class="header_top_right">
@@ -44,8 +44,8 @@
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="header_bottom">
-          <div class="logo_area"><a href="index.html" class="logo"><img src="images/logo.jpg" alt=""></a></div>
-          <div class="add_banner"><a href="#"><img src="images/addbanner_728x90_V1.jpg" alt=""></a></div>
+          <div class="logo_area"><a href="index.html" class="logo"><img src="{{ url_for('static', filename='images/logo.png') }}" alt=""></a></div>
+          <div class="add_banner"><a href="#"><img src="{{ url_for('static', filename='images/banner.jpg') }}" alt=""></a></div>
         </div>
       </div>
     </div>
@@ -86,5 +86,56 @@
     {% endfor %}
 </div>
 </center>
+<!--Footer start-->
+<footer id="footer">
+  <div class="footer_top">
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <div class="footer_widget wow fadeInLeftBig">
+          <ul class="tag_nav"><h2>Covid-19 Instructions</h2>
+            <li>Stay Home! Stay Safe!</li>
+            <li>Wash your Hands frequently</li>
+            <li>Use the Aarogya setu Application</li>
+            <li>Eat healthy food</li>
+            <li>Do exercise daily</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <div class="footer_widget wow fadeInDown">
+          <h2>Tag</h2>
+          <ul class="tag_nav">
+            <li>World</li>
+            <li>India</li>
+            <li>Covid</li>
+            <li>Business</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <div class="footer_widget wow fadeInRightBig">
+          <h2>Contact</h2>
+          <p>UnderLine News HeadQuarters</p>
+          <address>
+          Calicut, Kerala, India.
+          </address>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer_bottom">
+    <p class="copyright">Copyright &copy; 2020 <a href="index.html">UnderLine</a></p>
+    <p class="developer">Developed By JC</p>
+  </div>
+</footer>
+<!--Footer end-->
+<script src="{{ url_for('static', filename="js/jquery.min.js") }}"></script>
+<script src="{{ url_for('static', filename="js/wow.min.js") }}"></script> 
+<script src="{{ url_for('static', filename="js/bootstrap.min.js") }}"></script> 
+<script src="{{ url_for('static', filename="js/slick.min.js") }}"></script> 
+<script src="{{ url_for('static', filename="js/jquery.li-scroller.1.0.js") }}"></script> 
+<script src="{{ url_for('static', filename="js/jquery.newsTicker.min.js") }}"></script> 
+<script src="{{ url_for('static', filename="js/jquery.fancybox.pack.js") }}"></script> 
+<script src="{{ url_for('static', filename="js/custom.js") }}"></script>
 </body>
 </html>
