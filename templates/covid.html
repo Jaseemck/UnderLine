@@ -65,15 +65,14 @@
   </section>
 <center>
 <div class="container row equal-cols">
-    {% for new, des, i in context %}
+    {% for new, des, i, url in context %}
     <!--started-->
     <div class="col-md-6">
     <div class="card">
         <img class="card-img-top img-fluid myimage" src="{{i}}" alt="News">
         <div class="card-body">
-            <h3 class="card-title strong">{{new}}</h3>
+            <a href="{{url}}"><h3 class="card-title strong">{{new}}</h3></a>
             <p class="card-text">{{des}}</p>
-            <p class="card-text">{{ind}}</p>
         </div>
     </div>
     </div>
