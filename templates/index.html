@@ -29,13 +29,13 @@
         <div class="header_top">
           <div class="header_top_left">
             <ul class="top_nav">
-              <li><a href="/index.html">Home</a></li>
+              <li><a href="/">Home</a></li>
               <li><a href="#footer">About</a></li>
               <li><a href="#footer">Contact</a></li>
             </ul>
           </div>
           <div class="header_top_right">
-            <p>Friday, December 05, 2045</p>
+            <p id="date-today"></p>
           </div>
         </div>
       </div>
@@ -54,79 +54,53 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav main_nav">
-          <li class="active"><a href="index.html"><span class="fa fa-home desktop-home"></span><span class="mobile-show">Home</span></a></li>
+          <li class="active"><a href="/"><span class="fa fa-home desktop-home"></span><span class="mobile-show">Home</span></a></li>
           <li><a href="/world">World</a></li>
           <li><a href="/in">India</a></li>
           <li><a href="/covid">Covid-19</a></li>
           <li><a href="/biz">Business</a></li>
-          <li><a href="#">Just the Essentials!</a></li>
         </ul>
       </div>
     </nav>
   </section>
 <center>
-<div>
+<div class="container row equal-cols">
     {% for new, des, i in context %}
     <!--started-->
     <div class="col-md-6">
-    <div class="card" style="width:500px; height: 600px;">
-        <img class="card-img-top img-fluid" src="{{i}}" alt="News" style="width:400px;height:300px;">
+    <div class="card">
+        <img class="card-img-top img-fluid myimage" src="{{i}}" alt="News">
         <div class="card-body">
             <h3 class="card-title strong">{{new}}</h3>
             <p class="card-text">{{des}}</p>
+            <p class="card-text">{{ind}}</p>
         </div>
     </div>
     </div>
-    <!--Ended-->
-    <!--<img src="{{i}}", alt="">
-    <h3>News: </h3> {{new}}
-    <h4>Description: </h4> {{des}}-->
     {% endfor %}
 </div>
 </center>
 <!--Footer start-->
 <footer id="footer">
   <div class="footer_top">
-    <div class="row">
-      <div class="col-lg-4 col-md-4 col-sm-4">
-        <div class="footer_widget wow fadeInLeftBig">
-          <ul class="tag_nav"><h2>Covid-19 Instructions</h2>
-            <li>Stay Home! Stay Safe!</li>
-            <li>Wash your Hands frequently</li>
-            <li>Use the Aarogya setu Application</li>
-            <li>Eat healthy food</li>
-            <li>Do exercise daily</li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-4">
-        <div class="footer_widget wow fadeInDown">
-          <h2>Tag</h2>
-          <ul class="tag_nav">
-            <li>World</li>
-            <li>India</li>
-            <li>Covid</li>
-            <li>Business</li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-4">
-        <div class="footer_widget wow fadeInRightBig">
-          <h2>Contact</h2>
-          <p>UnderLine News HeadQuarters</p>
-          <address>
-          Calicut, Kerala, India.
-          </address>
-        </div>
-      </div>
-    </div>
+<center><p><b>#The_incomplete_projects Series</p></b></center>
   </div>
   <div class="footer_bottom">
-    <p class="copyright">Copyright &copy; 2020 <a href="index.html">UnderLine</a></p>
-    <p class="developer">Developed By JC</p>
+    <p class="copyright"><b>Credits : Team Tinkerhub Kerala, WPfreeware News Template</b></p>
+    <p class="developer">
+    <a href="https://www.linkedin.com/in/jaseemck/"><i class="fa fa-linkedin" style="color:white; font-size:20px;"></i></a>&nbsp;&nbsp;
+    <a href="https://github.com/Jaseemck"><i class="fa fa-github" style="color:white; font-size:20px;"></i></a>&nbsp;&nbsp;
+    <a href="https://twitter.com/jaseemckclt"><i class="fa fa-twitter" style="color:white; font-size:20px;"></i></a></p>
   </div>
 </footer>
 <!--Footer end-->
+<script>
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date-today").innerHTML = d + "/" + m + "/" + y;
+</script>
 <script src="{{ url_for('static', filename="js/jquery.min.js") }}"></script>
 <script src="{{ url_for('static', filename="js/wow.min.js") }}"></script> 
 <script src="{{ url_for('static', filename="js/bootstrap.min.js") }}"></script> 
