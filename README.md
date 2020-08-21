@@ -1,5 +1,6 @@
-# UnderLine
+# UnderLine: Just the Essentials
 News Aggregator
+![](https://github.com/Jaseemck/UnderLine/blob/master/static/images/logo.png)
 
 This a news aggregator build using flask, a python micro framework and deployed in Heroku app. 
 
@@ -20,6 +21,6 @@ I believe no project is fully completed. Every project has space to improve. But
 
 <Feel free to contact me and contribute to the project>
 
-Jaseem ck
 #The_incomplete_projects
+
 #Keep_Coding_Keep_Innovating
